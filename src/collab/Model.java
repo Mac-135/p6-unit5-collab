@@ -1,4 +1,4 @@
-package mvcexample;
+package collab;
 
 // A database with two counter components
 

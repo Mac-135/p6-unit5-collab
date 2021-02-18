@@ -1,7 +1,8 @@
-package mvcexample;
+package collab;
 
-// This is the pink view.
-// It displays the B component of the model (data base).
+
+// This is the yellow view.
+// It displays the A component of the model (data base).
 // As supplied, this view does not subscribe to the model as an Observer,
 // and relies on its controller to call update to cause the view to be refreshed.
 
@@ -9,7 +10,7 @@ import java.util.*;  // For Observer
 import java.awt.*;
 import javax.swing.*;
 
-public class View4 extends JPanel {
+public class View3 extends JPanel {
   
     private Model model;
     private Controller2 contr;   // Parent Frame
@@ -17,26 +18,26 @@ public class View4 extends JPanel {
     private JTextField display;
     
     // Constructor
-    public View4(Controller2 contr, Model model) {
+    public View3(Controller2 contr, Model model) {
         
         // Record references to the parent controller and the model
         this.contr = contr;
         this.model = model;
         
         // Set up view GUI
-        setBackground(Color.pink);
-        add(new JLabel("View4"));
+        setBackground(Color.yellow);
+        add(new JLabel("View3"));
         display = new JTextField("No data", 15);
         add(display);
-      
+        
     } // constructor
     
     // Called by controller to refresh the view:
     public void update() {
         
         // Fetch (potentially) updated information and display it
-        int b = model.getDataB();
-        display.setText("Model data B: " + b);
+        int a = model.getDataA();
+        display.setText("Model data A: " + a);
       
     } // update
     
@@ -46,5 +47,9 @@ public class View4 extends JPanel {
         display.setText("");
       
     } // clear
-    
-} // class View4
+  
+} // class View3
+
+
+
+

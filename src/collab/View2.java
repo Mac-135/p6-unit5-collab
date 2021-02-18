@@ -1,13 +1,14 @@
-package mvcexample;
+package collab;
 
-// This is the cyan view
-// It displays the A component of the model (data base)
+
+// This is the red view
+// It displays the B component of the model (data base)
 
 import java.util.*;  // For Observer
 import java.awt.*;
 import javax.swing.*;
 
-public class View1 extends JPanel 
+public class View2 extends JPanel 
                    implements Observer {
   
     private Model model;
@@ -16,15 +17,15 @@ public class View1 extends JPanel
     private JTextField display;
     
     // Constructor
-    public View1(Controller1 contr, Model model) {
-        
+    public View2(Controller1 contr, Model model) {
+          
         // Record references to the parent controller and the model
         this.contr = contr;
         this.model = model;
         
         // Set up view GUI
-        setBackground(Color.cyan);
-        add(new JLabel("View1"));
+        setBackground(Color.red);
+        add(new JLabel("View2"));
         display = new JTextField("No data", 15);
         add(display);
         
@@ -35,11 +36,11 @@ public class View1 extends JPanel
     
     // Notified by the model when it is altered:
     public void update(Observable o, Object arg) {
-        
+  
         // Fetch (potentially) updated information and display it
-        int a = model.getDataA();
-        display.setText("Model data A: " + a);
-        
+        int b = model.getDataB();
+        display.setText("Model data B: " + b);
+      
     } // update
     
     // Called by the controller to clear the view:
@@ -47,8 +48,9 @@ public class View1 extends JPanel
         
         display.setText("");
       
-  } // clear
-  
-} // class View1
+    } // clear
+    
+} // class View2
+
 
 
