@@ -18,6 +18,12 @@ public class Model extends Observable {
         notifyObservers();         // Note: notifies ALL Observing views
         
     } // modifyA
+    
+    public void modifyB() {
+    	dataBaseB++;
+        setChanged();
+        notifyObservers();
+    }
   
     public int getDataA() {
         
